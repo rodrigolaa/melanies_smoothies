@@ -6,7 +6,7 @@ import pandas as pd
 
 
 # Write directly to the app
-st.title("My Parents New Healthy Diner")
+st.title("My Streamlit App")
 st.write(
     """Choose the fruits you want in your custom Smoothie!
     """
