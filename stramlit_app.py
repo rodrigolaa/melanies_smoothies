@@ -5,7 +5,7 @@ from snowflake.snowpark.functions import col
 #New Section to add API Data
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-st.text(fruityvice_response.json())
+# st.text(fruityvice_response.json())
 
 # Write directly to the app
 st.title("My Parents New Healthy Diner")
@@ -46,3 +46,6 @@ if ingredients_list:
     if time_to_insert:
         session.sql(my_insert_stmt).collect()
         st.success(f'Your Smoothie is ordered! {name_on_order}', icon="✅")
+        
+fv_df = st.dataframe(data=fruityvice_response.json(), use_container_user = True)
+
